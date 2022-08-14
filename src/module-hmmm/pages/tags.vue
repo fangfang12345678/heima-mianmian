@@ -44,19 +44,13 @@
         :data="lists"
         style="width: 100%; margin-top: 10px"
       >
-        <el-table-column fixed type="index" label="序号" width="180">
-        </el-table-column>
-        <el-table-column prop="subjectName" label="所属学科" width="180">
-        </el-table-column>
-        <el-table-column prop="tagName" label="标签名称" width="180">
-        </el-table-column>
-        <el-table-column prop="username" label="创建者" width="180">
-        </el-table-column>
-        <el-table-column prop="addDate" label="创建日期" width="180">
-        </el-table-column>
-        <el-table-column prop="state" label="状态" width="180">
-        </el-table-column>
-        <el-table-column prop="disprice" label="操作" width="180">
+        <el-table-column fixed type="index" label="序号"> </el-table-column>
+        <el-table-column prop="subjectName" label="所属学科"> </el-table-column>
+        <el-table-column prop="tagName" label="标签名称"> </el-table-column>
+        <el-table-column prop="username" label="创建者"> </el-table-column>
+        <el-table-column prop="addDate" label="创建日期"> </el-table-column>
+        <el-table-column prop="state" label="状态"> </el-table-column>
+        <el-table-column prop="disprice" label="操作">
           <template v-slot="{ row }">
             <el-button @click="handleClick(row)" type="text" size="small">{{
               row.state === 0 ? "启用" : "禁用"
