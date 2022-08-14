@@ -49,7 +49,12 @@
         <el-table-column prop="tagName" label="标签名称"> </el-table-column>
         <el-table-column prop="username" label="创建者"> </el-table-column>
         <el-table-column prop="addDate" label="创建日期"> </el-table-column>
-        <el-table-column prop="state" label="状态"> </el-table-column>
+        <el-table-column prop="state" label="状态">
+          <template v-slot="{ row }">
+            <span v-if="row.state === 1">禁用</span>
+            <span v-if="row.state === 0">启用</span></template
+          ></el-table-column
+        >
         <el-table-column prop="disprice" label="操作">
           <template v-slot="{ row }">
             <el-button @click="handleClick(row)" type="text" size="small">{{
@@ -126,7 +131,7 @@ export default {
     },
     async handleClick(row) {
       row.state = row.state === 1 ? 0 : 1;
-      console.log(row.state);
+      // console.log(row.state);
       await changeState(row);
       this.$message.success("操作成功");
     },
@@ -135,7 +140,7 @@ export default {
     },
     async sousuo() {
       const res = await this.list();
-      console.log(res);
+      // console.log(res);
     },
     addTage() {
       this.dialogVisible = true;

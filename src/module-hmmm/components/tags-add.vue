@@ -21,10 +21,10 @@
             type="number"
           >
             <el-option
-              v-for="item in options"
-              :key="item.value"
+              v-for="(item, index) in options"
+              :key="index"
               :label="item.subjectName"
-              :value="item.subjectName"
+              :value="item.id"
             >
             </el-option>
           </el-select>

@@ -74,7 +74,7 @@
         >
         </el-pagination></div
     ></el-row>
-    <permissionsAdd ref="addper" :title="title" />
+    <permissionsAdd @getList="list" ref="addper" :title="title" />
   </el-card>
 </template>
 
@@ -145,6 +145,7 @@ export default {
       this.$refs.addper.dialogFormV();
       await this.$refs.addper.hanldeEditForm(id);
       await this.$refs.addper.setupData();
+      this.list();
     },
     async delPermission(data) {
       await this.$confirm("确定删除吗?");
